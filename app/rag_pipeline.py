@@ -1,97 +1,90 @@
-import json
 import os
+import json
 import numpy as np
 from dotenv import load_dotenv
 import google.generativeai as genai
 import faiss
 from sentence_transformers import SentenceTransformer
 
-# Load API key from .env
+base_path = os.path.dirname(os.path.abspath(__file__))
+faiss_path = os.path.join(base_path, "..", "embeddings", "faiss_index", "index.faiss")
+meta_path = os.path.join(base_path, "..", "embeddings", "faiss_index", "metadata.json")
+
 load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
-genai.configure(api_key=api_key)
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-print("Loading FAISS index...")
+faiss_index = None
+meta_data = None
+embed_model = None
 
-# Load FAISS index
-index = faiss.read_index("../embeddings/faiss_index/index.faiss")
+def load_store():
+    global faiss_index, meta_data
 
-print("Loading metadata...")
+    if faiss_index is None:
+        faiss_index = faiss.read_index(faiss_path)
 
-# Load metadata list
-with open("../embeddings/faiss_index/metadata.json", "r", encoding="utf-8") as f:
-    metadata_list = json.load(f)
+    if meta_data is None:
+        with open(meta_path, "r", encoding="utf-8") as f:
+            meta_data = json.load(f)
 
-print("Loading embedding model...")
+def load_embedder():
+    global embed_model
 
-# Free local embedding model
-embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+    if embed_model is None:
+        embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 
-print("RAG pipeline ready!")
+def make_embed(text):
+    load_embedder()
+    return embed_model.encode(text).astype("float32")
 
+def find_chunks(text, k=3):
+    load_store()
 
-# ---------------------------------------
-# Convert text to embedding vector
-# ---------------------------------------
-def get_embedding(text):
-    vector = embedding_model.encode(text).astype("float32")
-    return vector
+    q_vec = make_embed(text)
+    q_vec = np.expand_dims(q_vec, axis=0)
 
+    dist, idx = faiss_index.search(q_vec, k)
 
-# ---------------------------------------
-# Search FAISS for similar chunks
-# ---------------------------------------
-def search_similar_chunks(query, top_k=3):
-    query_vector = get_embedding(query)
-    query_vector = np.expand_dims(query_vector, axis=0)
+    out = []
+    for i in idx[0]:
+        if i < len(meta_data):
+            out.append(meta_data[i])
 
-    distances, indexes = index.search(query_vector, top_k)
-
-    results = []
-    for i in indexes[0]:
-        results.append(metadata_list[i])
-    return results
+    return out
 
 
-# ---------------------------------------
-# Ask Gemini using retrieved context
-# ---------------------------------------
 def ask_gemini(question):
-    chunks = search_similar_chunks(question, top_k=3)
+    chunks = find_chunks(question, k=3)
 
-    # Build context from retrieved chunks
-    context_text = ""
+    ctx = ""
     for c in chunks:
-        context_text += c["chunk"] + "\n\n"
+        ctx += c["chunk"] + "\n\n"
 
-    # Prompt for the LLM
     prompt = f"""
-You are a helpful medical assistant.
-Answer the question ONLY using the information from the context below.
+Only answer using the context below.
 
 Context:
-{context_text}
+{ctx}
 
 Question: {question}
 
-Give a clear medical answer.
-Then list the specialty and sample name of each chunk used.
+Give:
+1. Simple medical answer.
+2. Specialty + sample name for each chunk.
 """
 
     model = genai.GenerativeModel("models/gemini-flash-latest")
-    response = model.generate_content(prompt)
+    reply = model.generate_content(prompt)
 
-    return response.text, chunks
+    return reply.text, chunks
+
 
 if __name__ == "__main__":
-    print("RAG test mode:")
-    q = input("Ask a medical question: ")
-
+    print("RAG Test:")
+    q = input("Ask something: ")
     ans, src = ask_gemini(q)
 
-    print("\n--- Answer ---")
-    print(ans)
-
-    print("\n--- Sources Used ---")
+    print("\nAnswer:\n", ans)
+    print("\nSources:")
     for s in src:
-        print(f"{s['specialty']} | {s['sample_name']} | chunk {s['chunk_number']}")
+        print(s["specialty"], "|", s["sample_name"], "| chunk", s["chunk_number"])

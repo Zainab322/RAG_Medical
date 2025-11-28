@@ -1,0 +1,187 @@
+
+
+### Question: What are common symptoms of pneumonia?
+Answer:
+Based on the context provided, there is no information listing the common symptoms of pneumonia. The context only mentions that a patient had a chest CT which "showed possible atelectasis versus pneumonia."
+
+---
+### Source Chunks Used
+
+*   **Content Description:** Pediatric Review of Systems and Physical Exam (Mentioned testicular pain, weight 15.9 kg, and history of possible URI).
+    *   **Specialty and Sample Name:** Not specified in context.
+
+*   **Content Description:** Past Medical History and Review of Systems (Mentioned coronary artery disease, diabetes, CHF, and the finding of possible atelectasis versus pneumonia on CT).
+    *   **Specialty and Sample Name:** Not specified in context.
+
+*   **Content Description:** Detailed Physical Examination (Describing clear lungs, no wheezes, rales or rhonchi).
+    *   **Specialty and Sample Name:** Not specified in context.
+
+Sources Used:
+- Specialty:  Urology | Sample:  Testicular Pain 
+- Specialty:  Urology | Sample:  Hematuria & Urinary Retention 
+- Specialty:  Urology | Sample:  Blood in Urine - ER Visit 
+
+
+### Question: How is appendicitis usually diagnosed?
+Answer:
+The provided context does not contain information detailing how appendicitis is usually diagnosed.
+
+Sources Used:
+- Specialty:  Urology | Sample:  Pubic Cellulitis 
+- Specialty:  Urology | Sample:  Pubic Cellulitis 
+- Specialty:  Urology | Sample:  Testicular Pain 
+
+
+### Question: What symptoms are commonly seen in urinary tract infections?
+Answer:
+Based on the context provided, symptoms that may be associated with urinary tract infections (UTIs) or related urosepsis include:
+
+*   Dysuria
+*   Gross hematuria
+*   Fever
+*   Chills
+*   Weakness
+
+***
+
+**Source List:**
+
+| Specialty | Sample Name (Start of Chunk) |
+| :--- | :--- |
+| Medical Note | HISTORY OF PRESENT ILLNESS:, The patient presents today for followup... |
+| Medical Note | Previous urine cultures have shown E. coli, November 2007, May 7, |
+| Medical Note | HISTORY OF PRESENT ILLNESS: , The patient presents today as a consultation... |
+
+Sources Used:
+- Specialty:  Urology | Sample:  E. Coli UTI - Followup 
+- Specialty:  Urology | Sample:  Cysto Stent Removal 
+- Specialty:  Urology | Sample:  Neurogenic Bladder - Consult 
+
+
+### Question: Describe typical postoperative findings in knee arthroscopy.
+Answer:
+The typical postoperative findings following the arthroscopic irrigation and debridement with partial synovectomy of a left total knee arthroplasty include the following:
+
+*   **Postoperative Diagnosis:** Septic left total knee arthroplasty.
+*   **Complications:** None.
+*   **Drains:** None.
+*   **Estimated Blood Loss:** Minimal.
+*   **Condition:** The patient was transported to the recovery room in stable condition and tolerated the procedure well.
+
+***
+
+**Source Identification**
+
+| Specialty | Sample Name |
+| :--- | :--- |
+| Operation Performed: Arthroscopic irrigation and debridement of same with partial synovectomy | POSTOPERATIVE DIAGNOSIS: Septic left total knee arthroplasty |
+
+Sources Used:
+- Specialty:  Surgery | Sample:  Synovectomy - Partial 
+- Specialty:  Surgery | Sample:  Synovectomy - Partial 
+- Specialty:  Surgery | Sample:  Total Knee Arthoplasty - Right - 1 
+
+
+### Question: What are signs of gastrointestinal bleeding?
+Answer:
+Signs of gastrointestinal bleeding include blood in the stool and melena (dark sticky stool containing digested blood).
+
+**Source Chunks Used:**
+
+*   **Specialty and Sample Name:** Patient History/Review of Systems Denials
+
+Sources Used:
+- Specialty:  Urology | Sample:  Hematuria - Consult 
+- Specialty:  Urology | Sample:  Foul-Smelling Urine 
+- Specialty:  Urology | Sample:  Blood in Urine - ER Visit 
+
+
+### Question: What symptoms indicate deep vein thrombosis?
+Answer:
+Based on the context provided, there are no symptoms listed that indicate deep vein thrombosis.
+
+***
+
+**Chunks Used:**
+
+1.  Specialty/Sample Name: Critical Condition/Bleeding Report (Starting "athy with significant bleeding...")
+2.  Specialty/Sample Name: Varicose Vein Procedure Note (Starting "PREOPERATIVE DIAGNOSIS:, Varicose veins...")
+3.  Specialty/Sample Name: Review of Systems/Medications List (Starting "DICATIONS:, Coumadin and lisinopril...")
+
+Sources Used:
+- Specialty:  Urology | Sample:  Hematuria - Consult 
+- Specialty:  Surgery | Sample:  Saphenous Vein - Ligation & Stripping 
+- Specialty:  Urology | Sample:  Prostate Adenocarcinoma 
+
+
+### Question: What symptoms are typical for COPD exacerbation?
+Answer:
+The context does not describe the symptoms typical for COPD exacerbation.
+
+***
+
+**Specialty and Sample Name of each chunk used:**
+PREOPERATIVE DIAGNOSES, Ventilator-dependent respiratory failure.
+
+Sources Used:
+- Specialty:  Neurology | Sample:  Moyamoya Disease 
+- Specialty:  Urology | Sample:  Prostate Adenocarcinoma 
+- Specialty:  Surgery | Sample:  Tracheostomy Change 
+
+
+### Question: What are common physical findings in skin infections?
+Answer:
+The physical findings described in the context related to skin infections are:
+
+*   Edema (swelling)
+*   Erythema (redness)
+*   Abundant thrush and white patches on the tongue
+
+***
+
+**Sources Used:**
+
+| Specialty/Context Type | Sample Name/First Few Words |
+| :--- | :--- |
+| Physical Examination | ive to light |
+| Medical Diagnosis | DIAGNOSIS |
+| History of Present Illness | HISTORY OF PRESENT ILLNESS |
+
+Sources Used:
+- Specialty:  Surgery | Sample:  Spinal fluid evaluation 
+- Specialty:  Urology | Sample:  Pubic Cellulitis 
+- Specialty:  Bariatrics | Sample:  Laparoscopic Gastric Bypass Consult - 2 
+
+
+### Question: How is congestive heart failure documented in clinical notes?
+Answer:
+Congestive heart failure is documented using the full phrase, "recurrent congestive heart failure symptoms," and the abbreviation, "CHF," which is listed under the Past Medical History.
+
+***
+
+**Chunk Sources Used:**
+
+| Specialty | Sample Name |
+| :--- | :--- |
+| Cardiology/Cardiovascular Surgery | Insertion of a VVIR permanent pacemaker. |
+
+Sources Used:
+- Specialty:  Surgery | Sample:  VVIR Permanent Pacemaker Insertion 
+- Specialty:  Urology | Sample:  Hematuria & Urinary Retention 
+- Specialty:  Surgery | Sample:  Toronto Porcine Valve Insertion 
+
+
+### Question: Describe documentation of migraine symptoms.
+Answer:
+The patient has a Past Medical History (PMH) of Migraine Headache. Associated symptoms that were documented in the history review include headache, nausea, vomiting, fever, chills, neck stiffness, or visual change.
+
+***
+
+**Specialty and Sample Name of Each Chunk Used:**
+
+*   **H&P/Consultation Note:** any associated headache, nausea, vomiting, fever, chills, neck stiffness or visual change. There was no history of illicit drug/ETOH use or head trauma.,PMH:, Migraine Headache.
+
+Sources Used:
+- Specialty:  Neurology | Sample:  Moyamoya Disease 
+- Specialty:  Urology | Sample:  Prostate Adenocarcinoma 
+- Specialty:  Urology | Sample:  Flank Pain - Consult - 1 
